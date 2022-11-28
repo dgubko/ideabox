@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 24px;
 }
 
 .App > form {
@@ -43,4 +44,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }

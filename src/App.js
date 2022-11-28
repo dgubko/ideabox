@@ -1,6 +1,7 @@
 import "./App.css";
 import Form from "./components/Form";
 import Typography from "@mui/material/Typography";
+import IdeaBoxCard from "./components/IdeaBoxCard";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         Idea Box
       </Typography>
       <Form />
+      <main>
+        <IdeaBoxCard />
+      </main>
     </div>
   );
 }
