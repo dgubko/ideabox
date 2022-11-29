@@ -7,23 +7,28 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ideaImg from "../assets/idea.webp";
 
-export default function MediaCard() {
+const IdeaBoxCard = (props) => {
+  const handleClick = (event) => {
+    props.removeIdea(props.id);
+  };
   return (
     <Card>
       <CardMedia component="img" height="160" image={ideaImg} alt="new idea" />
       <CardContent>
         <Typography gutterBottom variant="h5">
-          New Idea
+          {props.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Description for the new idea
+          {props.description}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "center" }}>
-        <Button size="small" variant="contained">
+        <Button onClick={handleClick} size="large" variant="contained">
           Delete
         </Button>
       </CardActions>
     </Card>
   );
-}
+};
+
+export default IdeaBoxCard;

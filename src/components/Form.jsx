@@ -2,8 +2,8 @@ import React from "react";
 import { TextField, Button } from "@mui/material";
 
 class Form extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { title: "", description: "" };
   }
 
@@ -17,7 +17,18 @@ class Form extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    const newIdea = {
+      title: this.state.title,
+      description: this.state.description,
+      id: Date.now(),
+    };
+    this.props.addIdea(newIdea);
+    this.cleanForm();
+    console.log(newIdea);
+  };
+
+  cleanForm = () => {
+    this.setState({ title: "", description: "" });
   };
 
   render() {
